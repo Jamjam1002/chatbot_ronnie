@@ -1,0 +1,30 @@
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+chat_venv\Scripts\activate
+pip install -U langchain-community
+pip install chromadb
+pip install ctransformers
+
+#DEVELOPED BY RONNIE PEROLINO
+#REQUIRED og 16gb RAM
+
+
+#Complete Manual Install
+Install Ollama
+
+Create a Virtual Environment: I am using Python 3.10.12
+
+Install Requirements:
+
+1. pip install --upgrade pip
+2. pip install -r requirements.txt
+3. pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu
+Enter commands in terminal:
+
+4. python database_operations.py This will initialize the sqlite database for the chat sessions.
+5. streamlit run app.py
+(download og ollama sa LOCAL PC)Pull Models: Go to https://ollama.com/library and choose the models you want to use. Enter /pull MODEL_NAME in the chat bar. You need one embedding model e.g. nomic-embed-text to embed pdf files and one model which undertands images e.g. llava
+6. after download adto sa CMD then type (ollama serve)
+Optional:
+
+Check the config.yaml file and change accordingly to your needs.
+Place your user_image.png and/or bot_image.png inside the chat_icons folder and remove the old ones.
