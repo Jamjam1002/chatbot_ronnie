@@ -11,9 +11,13 @@ import time
 load_dotenv()
 
 
-def load_config(file_path = "config.yaml"):
-    with open(file_path, "r") as f:
-        return yaml.safe_load(f)
+def load_config(file_url="https://raw.githubusercontent.com/Jamjam1002/chatbot_ronnie/main/ronie_final/config.yaml"):
+    response = requests.get(file_url)
+    if response.status_code == 200:
+        return yaml.safe_load(response.text)
+    else:
+        raise Exception(f"Failed to load config from {file_url}. Status code: {response.status_code}")
+
     
 config = load_config()
 
