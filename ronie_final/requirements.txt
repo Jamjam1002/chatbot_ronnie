@@ -10,3 +10,4 @@ streamlit-mic-recorder==0.0.8
 transformers==4.44.2
 pydub==0.25.1
 pysqlite3==0.5.1
+pysqlite3-binary
