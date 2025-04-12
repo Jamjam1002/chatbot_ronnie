@@ -52,7 +52,7 @@ def main():
     # Page configuration for title and favicon (page logo)
     st.set_page_config(
         page_title="REMEDYGEN Alternative Recommender",
-        page_icon="C:/Users/Lenovo/ronnierecommender_december/chat_icons/bots_image.png"  # Replace with the actual path to your logo file
+        page_icon="https://raw.githubusercontent.com/Jamjam1002/chatbot_ronnie/tree/main/ronie_final/chat_icons/bots_image.png"  # Replace with the actual path to your logo file
     )
 
     st.title("REMEDYGEN:ALTERNATIVE MEDICINE RECOMMENDER")
@@ -75,7 +75,7 @@ def main():
         st.session_state.session_index_tracker = st.session_state.new_session_key
 
     # Sidebar Chat Sessions
-    st.sidebar.image("C:/Users/Lenovo/ronnierecommender_december/chat_icons/bots_image.png", width=50)
+    st.sidebar.image("https://raw.githubusercontent.com/Jamjam1002/chatbot_ronnie/tree/main/ronie_final/chat_icons/bots_image.png", width=50)
     st.sidebar.title("Chat Sessions History")
     chat_sessions = ["new_session"]
 
