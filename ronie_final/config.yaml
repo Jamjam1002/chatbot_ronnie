@@ -8,7 +8,7 @@ chat_config:
   number_of_retrieved_documents: 3
 
 pdf_text_splitter:
-  chunk_size: 1024 # number of characters 1024 roughly equels 256 tokens
+  chunk_size: 1024 # number of characters 1024 roughly equals 256 tokens
   overlap: 50
   separators: ["\n", "\n\n"]
 
@@ -19,3 +19,6 @@ chromadb:
   collection_name: "pdfs"
 
 chat_sessions_database_path: "./chat_sessions/chat_sessions.db"
+
+# The path to the raw config.yaml file from GitHub
+config_file_url: "https://raw.githubusercontent.com/Jamjam1002/chatbot_ronnie/main/ronie_final/config.yaml"
