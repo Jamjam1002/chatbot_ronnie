@@ -2,17 +2,26 @@
 # Copyright (C) 2024 Ronnie Perolino
 
 import streamlit as st
+import requests
+import yaml
 from chat_api_handler import ChatAPIHandler
 from streamlit_mic_recorder import mic_recorder
-from utils import get_timestamp, load_config, get_avatar
+from utils import get_timestamp, get_avatar
 from audio_handler import transcribe_audio
 from pdf_handler import add_documents_to_db
 from html_templates import css
 from database_operations import save_text_message, save_image_message, save_audio_message, load_messages, get_all_chat_history_ids, delete_chat_history, load_last_k_text_messages_ollama
-from utils import list_openai_models, list_ollama_models, command
-import sqlite3
 
-# Load configuration
+# Function to load config from GitHub raw URL
+def load_config(file_url="https://raw.githubusercontent.com/Jamjam1002/chatbot_ronnie/main/ronie_final/config.yaml"):
+    # Fetch the config file from the GitHub raw URL
+    response = requests.get(file_url)
+    if response.status_code == 200:
+        return yaml.safe_load(response.text)
+    else:
+        raise Exception(f"Failed to load config from {file_url}. Status code: {response.status_code}")
+
+# Load configuration from GitHub
 config = load_config()
 
 def toggle_pdf_chat():
